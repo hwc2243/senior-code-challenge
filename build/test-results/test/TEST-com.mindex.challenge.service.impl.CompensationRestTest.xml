@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.mindex.challenge.service.impl.CompensationRestTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-02-04T21:12:30" hostname="Bills-MacBook-PPI.local" time="0.182">
+  <properties/>
+  <testcase name="testGet" classname="com.mindex.challenge.service.impl.CompensationRestTest" time="0.182"/>
+  <system-out><![CDATA[2020-02-04 16:12:29.519  INFO 18896 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.mindex.challenge.service.impl.CompensationRestTest], using SpringBootContextLoader
+2020-02-04 16:12:29.520  INFO 18896 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.mindex.challenge.service.impl.CompensationRestTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-02-04 16:12:29.520  INFO 18896 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.mindex.challenge.service.impl.CompensationRestTest]: CompensationRestTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-02-04 16:12:29.529  INFO 18896 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.mindex.challenge.ChallengeApplication for test class com.mindex.challenge.service.impl.CompensationRestTest
+2020-02-04 16:12:29.531  INFO 18896 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2020-02-04 16:12:29.534  INFO 18896 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@61e8f93a, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@44c9e7c4, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2c60a9a6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1c005cd5, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3a874746, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@317b7015, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@187fc205, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@607d32b, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6ba09da, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6cab3ac0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@a22b2ba, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3204b65e]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.5.4.RELEASE)
+
+2020-02-04 16:12:29.592  INFO 18896 --- [    Test worker] c.m.c.service.impl.CompensationRestTest  : Starting CompensationRestTest on Bills-MacBook-PPI.local with PID 18896 (started by bconnors in /Users/bconnors/workspace/senior-code-challenge)
+2020-02-04 16:12:29.592 DEBUG 18896 --- [    Test worker] c.m.c.service.impl.CompensationRestTest  : Running with Spring Boot v1.5.4.RELEASE, Spring v4.3.9.RELEASE
+2020-02-04 16:12:29.592  INFO 18896 --- [    Test worker] c.m.c.service.impl.CompensationRestTest  : No active profile set, falling back to default profiles: default
+2020-02-04 16:12:29.594  INFO 18896 --- [    Test worker] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@73c38ce1: startup date [Tue Feb 04 16:12:29 EST 2020]; root of context hierarchy
+2020-02-04 16:12:30.025  INFO 18896 --- [    Test worker] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 0 (http)
+2020-02-04 16:12:30.038  INFO 18896 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-04 16:12:30.039  INFO 18896 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.15
+2020-02-04 16:12:30.114  INFO 18896 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-02-04 16:12:30.115  INFO 18896 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 521 ms
+2020-02-04 16:12:30.167  INFO 18896 --- [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2020-02-04 16:12:30.171  INFO 18896 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-02-04 16:12:30.171  INFO 18896 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-02-04 16:12:30.171  INFO 18896 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-02-04 16:12:30.171  INFO 18896 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2020-02-04 16:12:30.337  INFO 18896 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@73c38ce1: startup date [Tue Feb 04 16:12:29 EST 2020]; root of context hierarchy
+2020-02-04 16:12:30.346  INFO 18896 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/compensation/{id}],methods=[GET]}" onto public com.mindex.challenge.data.Compensation com.mindex.challenge.controller.CompensationController.read(java.lang.String)
+2020-02-04 16:12:30.347  INFO 18896 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/compensation],methods=[POST]}" onto public com.mindex.challenge.data.Compensation com.mindex.challenge.controller.CompensationController.create(com.mindex.challenge.data.Compensation)
+2020-02-04 16:12:30.347  INFO 18896 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/employee/{id}],methods=[PUT]}" onto public com.mindex.challenge.data.Employee com.mindex.challenge.controller.EmployeeController.update(java.lang.String,com.mindex.challenge.data.Employee)
+2020-02-04 16:12:30.348  INFO 18896 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/employee/{id}],methods=[GET]}" onto public com.mindex.challenge.data.Employee com.mindex.challenge.controller.EmployeeController.read(java.lang.String)
+2020-02-04 16:12:30.348  INFO 18896 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/employee],methods=[POST]}" onto public com.mindex.challenge.data.Employee com.mindex.challenge.controller.EmployeeController.create(com.mindex.challenge.data.Employee)
+2020-02-04 16:12:30.348  INFO 18896 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/reportingStructure/{id}],methods=[GET]}" onto public com.mindex.challenge.data.ReportingStructure com.mindex.challenge.controller.ReportingStructureController.read(java.lang.String)
+2020-02-04 16:12:30.350  INFO 18896 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-02-04 16:12:30.350  INFO 18896 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-02-04 16:12:30.362  INFO 18896 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-02-04 16:12:30.363  INFO 18896 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-02-04 16:12:30.377  INFO 18896 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-02-04 16:12:30.486  INFO 18896 --- [    Test worker] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 56143 (http)
+2020-02-04 16:12:30.487  INFO 18896 --- [    Test worker] c.m.c.service.impl.CompensationRestTest  : Started CompensationRestTest in 0.947 seconds (JVM running for 4.808)
+2020-02-04 16:12:30.573  INFO 18896 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-02-04 16:12:30.573  INFO 18896 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2020-02-04 16:12:30.585  INFO 18896 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 12 ms
+2020-02-04 16:12:30.622 DEBUG 18896 --- [o-auto-1-exec-1] c.m.c.controller.EmployeeController      : Received employee create request for [com.mindex.challenge.data.Employee@17eed5f7]
+2020-02-04 16:12:30.623 DEBUG 18896 --- [o-auto-1-exec-1] c.m.c.service.impl.EmployeeServiceImpl   : Creating employee [com.mindex.challenge.data.Employee@17eed5f7]
+2020-02-04 16:12:30.652 DEBUG 18896 --- [o-auto-1-exec-2] c.m.c.controller.CompensationController  : Received compensation create request for [com.mindex.challenge.data.Compensation@21a06e21]
+2020-02-04 16:12:30.652 DEBUG 18896 --- [o-auto-1-exec-2] c.m.c.s.impl.CompensationServiceImpl     : Creating compensation [com.mindex.challenge.data.Compensation@21a06e21]
+2020-02-04 16:12:30.665 DEBUG 18896 --- [o-auto-1-exec-3] c.m.c.controller.CompensationController  : Received compensation request for id [fbd779da-971d-4c67-b1c8-44c7cf1fa763]
+2020-02-04 16:12:30.665 DEBUG 18896 --- [o-auto-1-exec-3] c.m.c.s.impl.CompensationServiceImpl     : Finding compensation with id [fbd779da-971d-4c67-b1c8-44c7cf1fa763]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

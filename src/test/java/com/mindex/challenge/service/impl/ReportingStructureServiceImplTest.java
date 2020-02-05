@@ -36,6 +36,17 @@ public class ReportingStructureServiceImplTest
   @Test
   public void testGet ()
   {
+    Throwable t = null;
+    try
+    {
+      reportingStructureService.get("badId");
+    }
+    catch (Exception ex)
+    {
+      t = ex;
+    }
+    assertNotNull(t);
+    
     ReportingStructure reportingStructure = reportingStructureService.get("16a596ae-edd3-4847-99fe-c4518e82c86f");
     assertNotNull(reportingStructure);
     assertTrue(reportingStructure.getNumberOfReports() == 4);

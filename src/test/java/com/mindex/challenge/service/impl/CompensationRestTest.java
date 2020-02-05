@@ -47,7 +47,7 @@ public class CompensationRestTest
   public void testGet ()
   {
     double SALARY = 1000.0;
-    Date effectiveDate = new Date();
+    Date EFFECTIVE_DATE = new Date();
 
     Employee testEmployee = new Employee();
     testEmployee.setFirstName("Ernie");
@@ -58,11 +58,18 @@ public class CompensationRestTest
     Compensation testCompensation = new Compensation();
     testCompensation.setEmployee(persistedEmployee);
     testCompensation.setSalary(SALARY);
-    testCompensation.setEffectiveDate(effectiveDate);
+    testCompensation.setEffectiveDate(EFFECTIVE_DATE);
     
     Compensation persistedCompensation = restTemplate.postForEntity(compensationUrl, testCompensation, Compensation.class).getBody();
     assertNotNull(persistedCompensation);
-    assertEquals(persistedCompensation.getEffectiveDate(), effectiveDate);
+    assertEquals(persistedCompensation.getEffectiveDate(), EFFECTIVE_DATE);
     assertTrue(persistedCompensation.getSalary() == SALARY);
+    
+    Compensation retrievedCompensation = restTemplate.getForEntity(compensationIdUrl, Compensation.class, persistedEmployee.getEmployeeId()).getBody();
+    assertNotNull(retrievedCompensation);
+    assertEquals(testEmployee.getFirstName(), retrievedCompensation.getEmployee().getFirstName());
+    assertEquals(testEmployee.getLastName(), retrievedCompensation.getEmployee().getLastName());
+    assertEquals(retrievedCompensation.getEffectiveDate(), EFFECTIVE_DATE);
+    assertTrue(retrievedCompensation.getSalary() == SALARY);
   }
 }

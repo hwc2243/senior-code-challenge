@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CompensationServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">senior-code-challenge</a> &gt; <a href="index.source.html" class="el_package">com.mindex.challenge.service.impl</a> &gt; <span class="el_source">CompensationServiceImpl.java</span></div><h1>CompensationServiceImpl.java</h1><pre class="source lang-java linenums">package com.mindex.challenge.service.impl;
+
+import com.mindex.challenge.dao.CompensationRepository;
+import com.mindex.challenge.data.Compensation;
+import com.mindex.challenge.service.CompensationService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+<span class="fc" id="L12">public class CompensationServiceImpl implements CompensationService</span>
+{
+<span class="fc" id="L14">  private static final Logger LOG = LoggerFactory.getLogger(CompensationServiceImpl.class);</span>
+
+  @Autowired
+  protected CompensationRepository compensationRepository;
+  
+  public Compensation create (Compensation compensation)
+  {
+<span class="fc" id="L21">    LOG.debug(&quot;Creating compensation [{}]&quot;, compensation);</span>
+
+<span class="fc bfc" id="L23" title="All 4 branches covered.">    if (compensation.getEmployee() == null || compensation.getEmployee().getEmployeeId() == null)</span>
+    {
+<span class="fc" id="L25">      throw new RuntimeException(&quot;Employee has not been persisted&quot;);</span>
+    }
+    
+<span class="fc" id="L28">    compensationRepository.insert(compensation);</span>
+
+<span class="fc" id="L30">    return compensation;</span>
+
+  }
+  
+  public Compensation read (String id)
+  {
+<span class="fc" id="L36">    LOG.debug(&quot;Finding compensation with id [{}]&quot;, id);</span>
+
+<span class="fc" id="L38">    Compensation compensation = compensationRepository.findByEmployeeEmployeeId(id);</span>
+
+<span class="fc bfc" id="L40" title="All 2 branches covered.">    if (compensation == null) {</span>
+<span class="fc" id="L41">      throw new RuntimeException(&quot;Invalid employeeId: &quot; + id);</span>
+    }
+
+<span class="fc" id="L44">    return compensation;</span>
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

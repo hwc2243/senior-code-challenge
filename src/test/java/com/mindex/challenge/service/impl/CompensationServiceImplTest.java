@@ -50,13 +50,37 @@ public class CompensationServiceImplTest
     Employee employee = new Employee();
     employee.setFirstName("Ernie");
     employee.setLastName("Employee");
-    employee = employeeService.create(employee);
-    assertNotNull(employee.getEmployeeId());
     
     Compensation compensation = new Compensation();
-    compensation.setEmployee(employee);
     compensation.setSalary(SALARY);
     compensation.setEffectiveDate(effectiveDate);
+    
+    Throwable t = null;
+    try
+    {
+      compensation = compensationService.create(compensation);
+    }
+    catch (Exception ex)
+    {
+      t = ex;
+    }
+    assertNotNull(t);
+
+    compensation.setEmployee(employee);
+    t = null;
+    try
+    {
+      compensation = compensationService.create(compensation);
+    }
+    catch (Exception ex)
+    {
+      t = ex;
+    }
+    assertNotNull(t);
+
+    employee = employeeService.create(employee);
+    compensation.setEmployee(employee);
+    assertNotNull(employee.getEmployeeId());
     compensation = compensationService.create(compensation);
     assertNotNull(compensation);
     
@@ -64,5 +88,16 @@ public class CompensationServiceImplTest
     assertNotNull(persisted);
     assertEquals(persisted.getEffectiveDate(), effectiveDate);
     assertTrue(persisted.getSalary() == SALARY);
+    
+    t = null;
+    try
+    {
+      persisted = compensationService.read("badId");
+    }
+    catch (Exception ex)
+    {
+      t=ex;
+    }
+    assertNotNull(t);
   }
 }
