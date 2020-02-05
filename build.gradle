@@ -11,6 +11,7 @@ buildscript {
 }
 
 plugins {
+	id "jacoco"
     id "org.sonarqube" version "2.7"
 }
 
@@ -22,6 +23,19 @@ apply plugin: 'io.spring.dependency-management'
 group = 'com.mindex'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
+
+jacoco {
+    toolVersion = '0.8.5'
+    reportsDir = file("$buildDir/jacocoReport")
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        csv.enabled false
+        html.destination "${buildDir}/jacocoHtml"
+    }
+}
 
 repositories {
 	mavenCentral()
